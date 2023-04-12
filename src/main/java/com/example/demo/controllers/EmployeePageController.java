@@ -152,6 +152,9 @@ public class EmployeePageController implements Initializable {
             Quest oldQuest = tableViewCurrentQuests.getSelectionModel().getSelectedItem();
             Quest newQuest = tableViewCurrentQuests.getSelectionModel().getSelectedItem();
             String submittedLink = textFieldLink.getText();
+            if(textFieldLink.getText().isEmpty()) {
+                throw new Exception("You cannot submit without inserting a link.");
+            }
             newQuest.setLink(submittedLink);
             questService.update(oldQuest, newQuest);
             textFieldLink.clear();
