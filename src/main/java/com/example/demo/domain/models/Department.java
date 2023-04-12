@@ -1,9 +1,9 @@
-package com.example.demo.domain;
+package com.example.demo.domain.models;
 
 public enum Department {
     Software_Development,
     Technical_Support,
-    Project_Mangement,
+    Project_Management,
     Information_Security,
-    Quality_Asssurance
+    Quality_Assurance
 }

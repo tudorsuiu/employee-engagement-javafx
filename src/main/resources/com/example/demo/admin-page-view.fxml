@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #2d383c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controllers.AdminPageController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="1600.0" spacing="511.0">
+         <children>
+            <ImageView fitHeight="72.0" fitWidth="150.0">
+               <image>
+                  <Image url="@assets/blue_logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+            <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="837.0" spacing="336.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="labelVerifyQuests" onMouseClicked="#onVerifyQuestsButton" text="Verify quests" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelRanking" onMouseClicked="#onRankingButton" text="Ranking" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="150.0" prefWidth="300.0">
+                     <children>
+                        <Label fx:id="labelYourName" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="300.0" style="-fx-font-weight: bold;" text="Your Name" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelDepartment" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="300.0" text="Department" textAlignment="RIGHT" textFill="WHITE" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="39.0" right="39.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="hboxVerifyQuests" alignment="CENTER" layoutX="100.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1400.0" spacing="100.0" visible="false">
+         <children>
+            <TableView fx:id="tableViewVerifyQuests" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0">
+              <columns>
+                <TableColumn fx:id="tableColumnFirstNameVerifyQuests" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="First name" />
+                <TableColumn fx:id="tableColumnLastNameVerifyQuests" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Last name" />
+                  <TableColumn fx:id="tableColumnEmailVerifyQuests" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Email" />
+                  <TableColumn fx:id="tableColumnQuestNameVerifyQuests" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Quest name" />
+                  <TableColumn fx:id="tableColumnPointsVerifyQuests" maxWidth="48.0" minWidth="48.0" prefWidth="48.0" text="Points" />
+              </columns>
+            </TableView>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" spacing="5.0">
+               <children>
+                  <Label text="Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="396.0" endY="2.292893171310425" startX="-100.0" stroke="#19a7ce" strokeWidth="2.0" />
+                  <Text fx:id="textAreaVerifyQuests" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="450.0" />
+                  <Label fx:id="labelLink" textFill="WHITE" />
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="500.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="buttonValidate" mnemonicParsing="false" onAction="#onButtonValidate" text="Validate" visible="false" />
+                        <Button fx:id="buttonDecline" mnemonicParsing="false" onAction="#onButtonDecline" text="Decline" visible="false" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox fx:id="hboxRanking" alignment="CENTER" layoutX="100.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1400.0" spacing="100.0">
+         <children>
+            <TableView fx:id="tableViewRanking" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0">
+               <columns>
+                  <TableColumn fx:id="tableColumnFirstNameRanking" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="First name" />
+                  <TableColumn fx:id="tableColumnLastNameRanking" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" text="Last name" />
+                  <TableColumn fx:id="tableColumnEmailRanking" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Email" />
+                  <TableColumn fx:id="tableColumnPointsRanking" maxWidth="49.0" minWidth="49.0" prefWidth="49.0" text="Points" />
+                  <TableColumn fx:id="tableColumnBadgeRanking" prefWidth="149.0" text="Badge" />
+               </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <Label fx:id="labelErrors" alignment="CENTER" layoutX="320.0" layoutY="775.0" prefHeight="17.0" prefWidth="959.0" style="-fx-font-weight: bold;" textFill="WHITE" />
+   </children>
+</AnchorPane>

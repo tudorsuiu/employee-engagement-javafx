@@ -1,14 +1,11 @@
 package com.example.demo.repository;
 
-import com.example.demo.domain.Badge;
-import com.example.demo.domain.Department;
-import com.example.demo.domain.Employee;
-import com.example.demo.domain.Quest;
+import com.example.demo.domain.models.Department;
+import com.example.demo.domain.models.Quest;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class QuestRepository implements Repository<Quest> {
     private String url = "jdbc:postgresql://localhost:5432/bluedb";
@@ -28,7 +25,7 @@ public class QuestRepository implements Repository<Quest> {
 
     @Override
     public void create(Quest entity) {
-        String sql = "insert into quests (id, name, details, prize_points, creator_id, employee_id, deadline, department) values (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into quests (id, name, details, prize_points, creator_id, employee_id, deadline, department, approval, link) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection connection = DriverManager.getConnection(url, username, password);
              PreparedStatement ps = connection.prepareStatement(sql)) {
 
@@ -40,6 +37,8 @@ public class QuestRepository implements Repository<Quest> {
             ps.setInt(6,entity.getEmployeeId());
             ps.setDate(7, entity.getDeadline());
             ps.setString(8,entity.getDepartment().toString());
+            ps.setBoolean(9, entity.getApproval());
+            ps.setString(10, entity.getLink());
 
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -62,8 +61,10 @@ public class QuestRepository implements Repository<Quest> {
                 Integer creatorId = resultSet.getInt("creator_id");
                 Integer employeeId = resultSet.getInt("employee_id");
                 Date deadline = resultSet.getDate("deadline");
+                Boolean approval = resultSet.getBoolean("approval");
+                String link = resultSet.getString("link");
 
-                Quest quest = new Quest(id,name,details,department,prizePoints,creatorId,employeeId,deadline);
+                Quest quest = new Quest(id,name,details,department,prizePoints,creatorId,employeeId,deadline, approval, link);
                 quests.add(quest);
             }
             return quests;
@@ -74,12 +75,12 @@ public class QuestRepository implements Repository<Quest> {
     }
 
     @Override
-    public Optional<Quest> read(int index) {
+    public Quest read(int id) {
         String sql = "SELECT * from quests q WHERE q.id = (?)";
         Quest quest = new Quest();
         try (Connection connection = DriverManager.getConnection(url, username, password);
              PreparedStatement ps = connection.prepareStatement(sql);) {
-            ps.setInt(1,index);
+            ps.setInt(1,id);
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
                 String name = resultSet.getString("name");
@@ -89,19 +90,21 @@ public class QuestRepository implements Repository<Quest> {
                 Integer creatorId = resultSet.getInt("creator_id");
                 Integer employeeId = resultSet.getInt("employee_id");
                 Date deadline = resultSet.getDate("deadline");
+                Boolean approval = resultSet.getBoolean("approval");
+                String link = resultSet.getString("link");
 
-                quest = new Quest(index, name, details, department, prizePoints, creatorId, employeeId, deadline);
-                return Optional.of(quest);
+                quest = new Quest(id, name, details, department, prizePoints, creatorId, employeeId, deadline, approval, link);
+                return quest;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return Optional.empty();
+        return null;
     }
 
     @Override
     public void update(Quest oldEntity, Quest newEntity) {
-        String sql = "UPDATE quests SET name = (?), details = (?), department = (?), prize_points = (?), creator_id = (?), employee_id = (?), deadline = (?) WHERE id = (?)";
+        String sql = "UPDATE quests SET name = (?), details = (?), department = (?), prize_points = (?), creator_id = (?), employee_id = (?), deadline = (?), approval = (?), link = (?) WHERE id = (?)";
         try(Connection connection = DriverManager.getConnection(url, username, password);
             PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1,newEntity.getName());
@@ -111,6 +114,9 @@ public class QuestRepository implements Repository<Quest> {
             ps.setInt(5, newEntity.getCreatorId());
             ps.setInt(6, newEntity.getEmployeeId());
             ps.setDate(7, newEntity.getDeadline());
+            ps.setBoolean(8, newEntity.getApproval());
+            ps.setString(9, newEntity.getLink());
+            ps.setInt(10, oldEntity.getId());
 
             ps.executeUpdate();
         }

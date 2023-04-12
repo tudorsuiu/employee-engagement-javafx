@@ -1,13 +1,12 @@
 package com.example.demo.repository;
 
-import com.example.demo.domain.Badge;
-import com.example.demo.domain.Department;
-import com.example.demo.domain.Employee;
+import com.example.demo.domain.models.Badge;
+import com.example.demo.domain.models.Department;
+import com.example.demo.domain.models.Employee;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class EmployeeRepository implements Repository<Employee> {
     private String url = "jdbc:postgresql://localhost:5432/bluedb";
@@ -59,7 +58,7 @@ public class EmployeeRepository implements Repository<Employee> {
                 Integer age = resultSet.getInt("age");
                 String email = resultSet.getString("email");
                 String password = resultSet.getString("password");
-                Department department = Department.valueOf(resultSet.getString("job_title"));
+                Department department = Department.valueOf(resultSet.getString("department"));
                 Integer collectedPoints = resultSet.getInt("collected_points");
                 String badgeString = resultSet.getString("badge");
                 Badge badge = Badge.valueOf(badgeString);
@@ -75,12 +74,12 @@ public class EmployeeRepository implements Repository<Employee> {
     }
 
     @Override
-    public Optional<Employee> read(int index) {
-        String sql = "SELECT * from employees e WHERE e.id == (?)";
+    public Employee read(int id) {
+        String sql = "SELECT * from employees e WHERE e.id = (?)";
         Employee employee = new Employee();
         try (Connection connection = DriverManager.getConnection(url, username, password);
              PreparedStatement ps = connection.prepareStatement(sql);) {
-            ps.setInt(1,index);
+            ps.setInt(1,id);
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
                 String firstName = resultSet.getString("first_name");
@@ -93,13 +92,13 @@ public class EmployeeRepository implements Repository<Employee> {
                 String badgeString = resultSet.getString("badge");
                 Badge badge = Badge.valueOf(badgeString);
 
-                employee = new Employee(index, firstName, lastName, age, email, password, department, collectedPoints, badge);
-                return Optional.of(employee);
+                employee = new Employee(id, firstName, lastName, age, email, password, department, collectedPoints, badge);
+                return employee;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return Optional.empty();
+        return null;
     }
 
     @Override

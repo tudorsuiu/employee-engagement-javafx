@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.models;
 
 public enum Badge {
     // < 50 points

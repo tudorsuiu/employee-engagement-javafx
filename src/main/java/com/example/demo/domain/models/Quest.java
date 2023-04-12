@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.models;
 
 import java.sql.Date;
 
@@ -10,8 +10,10 @@ public class Quest extends Entity {
     private Integer creatorId;
     private Integer employeeId;
     private Date deadline;
+    private Boolean approval;
+    private String link;
 
-    public Quest(Integer id, String name, String details, Department department, Integer prizePoints, Integer creatorId, Integer employeeId, Date deadline) {
+    public Quest(Integer id, String name, String details, Department department, Integer prizePoints, Integer creatorId, Integer employeeId, Date deadline, Boolean approval, String link) {
         super(id);
         this.name = name;
         this.details = details;
@@ -20,6 +22,8 @@ public class Quest extends Entity {
         this.creatorId = creatorId;
         this.employeeId = employeeId;
         this.deadline = deadline;
+        this.approval = approval;
+        this.link = link;
     }
 
     public Quest() {
@@ -81,16 +85,19 @@ public class Quest extends Entity {
         this.deadline = deadline;
     }
 
-    @Override
-    public String toString() {
-        return "Quest{" +
-                ", id=" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", department='" + department.toString() + '\'' +
-                ", details='" + details + '\'' +
-                ", prizePoints=" + prizePoints + '\'' +
-                ", creatorId=" + creatorId + '\'' +
-                ", employeeId=" + employeeId +
-                '}';
+    public Boolean getApproval() {
+        return approval;
+    }
+
+    public void setApproval(Boolean approval) {
+        this.approval = approval;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

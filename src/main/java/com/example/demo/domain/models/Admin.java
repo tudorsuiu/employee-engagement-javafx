@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.models;
 
 public class Admin extends User {
     private Department department;
@@ -23,18 +23,5 @@ public class Admin extends User {
 
     public void setDepartment(Department department) {
         this.department = department;
-    }
-
-    @Override
-    public String toString() {
-        return "Admin{" +
-                "id='" + id + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age='" + age + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                "department='" + department +
-                '}';
     }
 }

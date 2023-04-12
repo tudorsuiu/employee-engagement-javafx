@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.models;
 
 public class Employee extends User {
     private Department department;
@@ -38,19 +38,5 @@ public class Employee extends User {
 
     public void setBadge(Badge badge) {
         this.badge = badge;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id='" + id + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", department='" + department.toString() + '\'' +
-                ", collectedPoints=" + collectedPoints +
-                '}';
     }
 }

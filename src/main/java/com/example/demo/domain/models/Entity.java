@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.models;
 
 public class Entity {
     protected Integer id;

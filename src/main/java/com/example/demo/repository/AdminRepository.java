@@ -1,11 +1,11 @@
 package com.example.demo.repository;
 
-import com.example.demo.domain.*;
+import com.example.demo.domain.models.Admin;
+import com.example.demo.domain.models.Department;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class AdminRepository implements Repository<Admin> {
     private String url = "jdbc:postgresql://localhost:5432/bluedb";
@@ -70,12 +70,12 @@ public class AdminRepository implements Repository<Admin> {
     }
 
     @Override
-    public Optional<Admin> read(int index) {
-        String sql = "SELECT * from admins a WHERE a.id == (?)";
+    public Admin read(int id) {
+        String sql = "SELECT * from admins a WHERE a.id = (?)";
         Admin admin = new Admin();
         try (Connection connection = DriverManager.getConnection(url, username, password);
              PreparedStatement ps = connection.prepareStatement(sql);) {
-            ps.setInt(1,index);
+            ps.setInt(1,id);
             ResultSet resultSet = ps.executeQuery();
             if (resultSet.next()) {
                 String firstName = resultSet.getString("first_name");
@@ -85,13 +85,13 @@ public class AdminRepository implements Repository<Admin> {
                 String password = resultSet.getString("password");
                 Department department = Department.valueOf(resultSet.getString("department"));
 
-                admin = new Admin(index, firstName, lastName, age, email, password, department);
-                return Optional.of(admin);
+                admin = new Admin(id, firstName, lastName, age, email, password, department);
+                return admin;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return Optional.empty();
+        return null;
     }
 
     @Override

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #2d383c;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controllers.EmployeePageController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="1600.0" spacing="311.0">
+         <children>
+            <ImageView fitHeight="72.0" fitWidth="150.0">
+               <image>
+                  <Image url="@assets/blue_logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+            <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="1063.0" spacing="232.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="635.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="labelAllQuests" onMouseClicked="#onLabelAllQuests" text="All quests" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelCurrentQuests" onMouseClicked="#onLabelCurrentQuests" text="Current quests" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelCompletedQuests" onMouseClicked="#onLabelCompletedQuests" text="Completed quests" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelCreateQuest" onMouseClicked="#onLabelCreateQuest" text="Create quest" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelShop" onMouseClicked="#onLabelShop" text="Shop" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="150.0" prefWidth="318.0">
+                     <children>
+                        <Label fx:id="labelYourName" alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="257.0" style="-fx-font-weight: bold;" text="Your Name" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelPoints" alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="257.0" style="-fx-font-style: italic;" text="0 points" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelDepartment" alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="257.0" text="Department" textAlignment="RIGHT" textFill="WHITE" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="39.0" right="39.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="hboxAllQuests" alignment="CENTER" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1400.0" spacing="100.0" visible="false">
+         <children>
+            <TableView fx:id="tableViewAllQuests" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0">
+              <columns>
+                <TableColumn fx:id="tableColumnNameAllQuests" prefWidth="350.0" style="-fx-alignment: center;" text="Name" />
+                <TableColumn fx:id="tableColumnPointsAllQuests" minWidth="0.0" prefWidth="50.0" style="-fx-alignment: center;" text="Points" />
+                  <TableColumn fx:id="tableColumnDeadlineAllQuests" minWidth="0.0" prefWidth="98.0" style="-fx-alignment: center;" text="Deadline" />
+              </columns>
+            </TableView>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" spacing="5.0">
+               <children>
+                  <Label text="Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="396.0" endY="2.292893171310425" startX="-100.0" stroke="#19a7ce" strokeWidth="2.0" />
+                  <Text fx:id="textAreaAllQuests" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="500.0" />
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="500.0">
+                     <children>
+                        <Button fx:id="buttonAcceptQuest" mnemonicParsing="false" onAction="#onButtonAcceptQuest" text="Accept" visible="false" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox fx:id="hboxCurrentQuests" alignment="CENTER" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1400.0" spacing="100.0" visible="false">
+         <children>
+            <TableView fx:id="tableViewCurrentQuests" prefHeight="500.0" prefWidth="500.0">
+              <columns>
+                <TableColumn fx:id="tableColumnNameCurrentQuests" prefWidth="350.0" text="Name" />
+                <TableColumn fx:id="tableColumnPointsCurrentQuests" prefWidth="50.0" text="Points" />
+                  <TableColumn fx:id="tableColumnDeadlineCurrentQuests" prefWidth="98.0" text="Deadline" />
+              </columns>
+            </TableView>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" spacing="5.0">
+               <children>
+                  <Label text="Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="396.0" endY="2.292893171310425" startX="-100.0" stroke="#19a7ce" strokeWidth="2.0" />
+                  <Text fx:id="textAreaCurrentQuests" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="500.0" />
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="500.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="textFieldLink" prefHeight="25.0" prefWidth="283.0" promptText="Link" visible="false" />
+                        <Button fx:id="buttonSubmit" mnemonicParsing="false" onAction="#onSubmitButton" text="Submit" visible="false" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox fx:id="hboxCompletedQuests" alignment="CENTER" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1400.0" spacing="100.0" visible="false">
+         <children>
+            <TableView fx:id="tableViewCompletedQuests" prefHeight="500.0" prefWidth="500.0">
+               <columns>
+                  <TableColumn fx:id="tableColumnNameCompletedQuests" prefWidth="350.0" text="Name" />
+                  <TableColumn fx:id="tableColumnPointsCompletedQuests" prefWidth="50.0" text="Points" />
+                  <TableColumn fx:id="tableColumnDeadlineCompletedQuests" prefWidth="98.0" text="Deadline" />
+               </columns>
+            </TableView>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" spacing="5.0">
+               <children>
+                  <Label text="Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="396.0" endY="2.292893171310425" startX="-100.0" stroke="#19a7ce" strokeWidth="2.0" />
+                  <Text fx:id="textAreaCompletedQuests" fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="500.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox fx:id="hboxShop" alignment="CENTER" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1400.0" visible="false">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0">
+               <children>
+                  <ImageView fitHeight="184.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@assets/merch_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Merchandise - 50 points" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="buttonBuyMerchandise" alignment="CENTER" onMousePressed="#onButtonBuyMerchandise" prefHeight="34.0" prefWidth="60.0" style="-fx-font-weight: bold; -fx-cursor: hand;" text="BUY" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0">
+               <children>
+                  <ImageView fitHeight="184.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@assets/mousepad_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Mousepad - 75 points" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="buttonBuyMousepad" alignment="CENTER" onMousePressed="#onButtonBuyMousepad" prefHeight="34.0" prefWidth="60.0" style="-fx-font-weight: bold; -fx-cursor: hand;" text="BUY" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0">
+               <children>
+                  <ImageView fitHeight="184.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@assets/mouse_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label text=" Mouse - 100 points" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="buttonBuyMouse" alignment="CENTER" onMousePressed="#onButtonBuyMouse" prefHeight="34.0" prefWidth="60.0" style="-fx-font-weight: bold; -fx-cursor: hand;" text="BUY" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0">
+               <children>
+                  <ImageView fitHeight="184.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@assets/keyboard_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Keyboard - 150 points" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="buttonBuyKeyboard" alignment="CENTER" onMousePressed="#onButtonBuyKeyboard" prefHeight="34.0" prefWidth="60.0" style="-fx-font-weight: bold; -fx-cursor: hand;" text="BUY" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0">
+               <children>
+                  <ImageView fitHeight="184.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@assets/dayoff_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="One day off - 300 points" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="buttonBuyDayOff" alignment="CENTER" onMousePressed="#onButtonBuyDayOff" prefHeight="34.0" prefWidth="60.0" style="-fx-font-weight: bold; -fx-cursor: hand;" text="BUY" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children></HBox>
+      <HBox fx:id="hboxCreateQuest" alignment="CENTER" layoutX="100.0" layoutY="250.0" prefHeight="500.0" prefWidth="1400.0" visible="false">
+         <children>
+            <VBox alignment="CENTER" prefHeight="500.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="QUEST INFORMATION" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="42.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Name" textFill="WHITE" />
+                        <TextField fx:id="textFieldName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="42.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Details" textFill="WHITE" />
+                        <TextArea fx:id="textAreaDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="42.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Prize points" textFill="WHITE" />
+                        <TextField fx:id="textFieldPrizePoints" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="42.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Deadline" textFill="WHITE" />
+                        <DatePicker fx:id="datePicker" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="buttonCreateQuest" mnemonicParsing="false" onAction="#onCreateQuestButton" text="Create quest" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label fx:id="labelErrors" alignment="CENTER" layoutX="320.0" layoutY="775.0" prefHeight="17.0" prefWidth="959.0" style="-fx-font-weight: bold;" textFill="WHITE" />
+   </children>
+</AnchorPane>
