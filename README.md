@@ -19,6 +19,8 @@ Pentru crearea acestui proiect am folosit ca framework <strong>JavaFX</strong> s
 <h2> 🛠️ Functionalitati </h2>
 ✅ Utilizatorii pot câștiga tokens / puncte și badges în urma participării / rezolvării unor quest-uri.
 <br>
+<strong> --> </strong> Am implementat aceasta functionalitate astfel: angajatii pot castiga puncte in urma rezolvarii unor quest-uri, daca acestea sunt validate de catre managerul/managerii departamentului in care acestia sunt. Pe baza punctelor acumulate acestia vor primi cate un badge.
+<br>
 <br>
 ✅ Utilizatorii trebuie identificați iar datele aferente lor (punctaje, nume etc.) salvate. 
 <br>
