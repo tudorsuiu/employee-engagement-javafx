@@ -11,10 +11,30 @@ Totul in afara de iconitele utilizate in shop a fost conceput si creat de mine.
 <br>
 <a href="https://www.flaticon.com/free-icon/day-off_7174337?term=day+off&page=1&position=1&origin=search&related_id=7174337">Credit dayoff_icon</a>
 
-<h2> ℹ️ Despre </h2>
+<h2> 🔍 Cerinta </h2>
 Compania Blue are nevoie de o soluție software prin care să crească engagement-ul angajaților, în așa fel încât aceștia să se implice în mai multe activități, în urma cărora să aibă un sentiment mai puternic de satisfacție. Studiile arată că un concept de gamification s-ar plia foarte bine pentru a rezolva problema într-un mod interactiv, oferind utilizatorilor o experiență faină.
 <br>
 Pentru crearea acestui proiect am folosit ca framework <strong>JavaFX</strong> si pentru stocarea datelor am utilizat <strong>PostgreSQL</strong>.
+<br>
+
+<h2> ℹ️ Despre </h2>
+Această aplicație a fost creată pentru a ajuta la gestionarea questurilor din cadrul companiei Blue, cu departamentele Software Development, Technical Support, Quality Assurance, Information Security și Project Management.
+<br>
+<br>
+Scopul acestui proiect este de a stimula angajații să își îmbunătățească abilitățile și performanțele prin îndeplinirea questurilor. Angajații pot alege să accepte questuri din departamentul lor și să le îndeplinească pentru a acumula puncte. După ce un angajat finalizează un quest și dă submit, un manager din departamentul respectiv va valida questul. Dacă este acceptat, punctele corespunzătoare vor fi adăugate la suma totală de puncte adunate a angajatului. Fiecare angajat poate crea la rândul lui un quest pentru colegii săi de departament, atât timp cât deține punctele necesare pentru a-i răsplăti pe aceștia.
+<br>
+<br>
+În cazul în care un manager nu validează submit-ul unui angajat, acesta va avea posibilitatea de a încerca din nou să dea submit la quest. Fiecare angajat poate crea un quest, atât timp cât are suficiente puncte pentru a le oferi ca premiu pentru îndeplinirea questului de către alt angajat.
+<br>
+<br>
+Fiecare angajat va avea un badge, în funcție de numărul de puncte acumulate. Cu punctele adunate, angajații pot accesa magazinul intern pentru a cumpăra obiecte sau servicii.
+<br>
+<br>
+Managerii din departamente au acces la pagina de ranking, unde pot vedea performanțele angajaților din departamentul lor, sortați după numărul de puncte acumulate și alte performanțe în cadrul companiei.
+<br>
+<br>
+Aplicație a fost concepută pentru a stimula angajații companiei Blue să își îmbunătățească abilitățile și să se dezvolte în cadrul companiei.
+<br>
 
 <h2> 🛠️ Functionalitati </h2>
 ✅ Utilizatorii pot câștiga tokens / puncte și badges în urma participării / rezolvării unor quest-uri.
