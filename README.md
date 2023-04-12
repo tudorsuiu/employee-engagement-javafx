@@ -1,9 +1,15 @@
+<h2> © Credite </h2>
 Totul in afara de iconitele utilizate in shop a fost conceput si creat de mine.
-Credit merchandise_icon: https://www.flaticon.com/free-icon/merchandise_4047583?term=merchandise&page=1&position=1&origin=tag&related_id=4047583
-Credit mousepad_icon: https://www.vecteezy.com/png/1203943-mouse-pad-computer
-Credit mouse_icon: https://www.flaticon.com/free-icon/mouse_10335248?term=mouse&page=1&position=15&origin=tag&related_id=10335248
-Credit keyboard_icon: https://www.flaticon.com/free-icon/keyboard_2263611?term=keyboard&page=1&position=1&origin=tag&related_id=2263611
-Credit dayoff_icon: https://www.flaticon.com/free-icon/day-off_7174337?term=day+off&page=1&position=1&origin=search&related_id=7174337
+<br>
+<a href="https://www.flaticon.com/free-icon/merchandise_4047583?term=merchandise&page=1&position=1&origin=tag&related_id=4047583">Credit merchandise_icon</a>
+<br>
+<a href="https://www.vecteezy.com/png/1203943-mouse-pad-computer">Credit mousepad_icon</a>
+<br>
+<a href="https://www.flaticon.com/free-icon/mouse_10335248?term=mouse&page=1&position=15&origin=tag&related_id=10335248">Credit mouse_icon</a>
+<br>
+<a href="https://www.flaticon.com/free-icon/keyboard_2263611?term=keyboard&page=1&position=1&origin=tag&related_id=2263611">Credit keyboard_icon</a>
+<br>
+<a href="https://www.flaticon.com/free-icon/day-off_7174337?term=day+off&page=1&position=1&origin=search&related_id=7174337">Credit dayoff_icon</a>
 
 <h2> ℹ️ Despre </h2>
 Compania Blue are nevoie de o soluție software prin care să crească engagement-ul angajaților, în așa fel încât aceștia să se implice în mai multe activități, în urma cărora să aibă un sentiment mai puternic de satisfacție. Studiile arată că un concept de gamification s-ar plia foarte bine pentru a rezolva problema într-un mod interactiv, oferind utilizatorilor o experiență faină.
@@ -26,5 +32,5 @@ Pentru crearea acestui proiect am folosit ca framework JavaFX.
 <br>
 
 <h2>🖥️ Models/Classes </h2>
-<strong>CRUD for medicine:</strong> <i>You can Create/Read/Update/Delete any medicine.</i>
+<strong></strong> <i></i>
 <br>
