@@ -1,32 +1,30 @@
-<h2>ℹ️ Despre</h2>
+Totul in afara de iconitele utilizate in shop a fost conceput si creat de mine.
+Credit merchandise_icon: https://www.flaticon.com/free-icon/merchandise_4047583?term=merchandise&page=1&position=1&origin=tag&related_id=4047583
+Credit mousepad_icon: https://www.vecteezy.com/png/1203943-mouse-pad-computer
+Credit mouse_icon: https://www.flaticon.com/free-icon/mouse_10335248?term=mouse&page=1&position=15&origin=tag&related_id=10335248
+Credit keyboard_icon: https://www.flaticon.com/free-icon/keyboard_2263611?term=keyboard&page=1&position=1&origin=tag&related_id=2263611
+Credit dayoff_icon: https://www.flaticon.com/free-icon/day-off_7174337?term=day+off&page=1&position=1&origin=search&related_id=7174337
+
+<h2> ℹ️ Despre </h2>
 Compania Blue are nevoie de o soluție software prin care să crească engagement-ul angajaților, în așa fel încât aceștia să se implice în mai multe activități, în urma cărora să aibă un sentiment mai puternic de satisfacție. Studiile arată că un concept de gamification s-ar plia foarte bine pentru a rezolva problema într-un mod interactiv, oferind utilizatorilor o experiență faină.
 Pentru crearea acestui proiect am folosit ca framework JavaFX.
 
-<h2>🛠️ Functionalitati
+<h2> 🛠️ Functionalitati </h2>
+✅ Utilizatorii pot câștiga tokens / puncte și badges în urma participării / rezolvării unor quest-uri.
+<br>
+✅ Utilizatorii trebuie identificați iar datele aferente lor (punctaje, nume etc.) salvate. --> Pentru a salva datele utilizatorilor (Admin, Employee) dar si a altor clase utilizate (Quest) am folosit <strong>PostgreSQL</strong>.
+<br>
+✅ Quest-urile pot fi propuse de oricine, cu condiția să aibă suficienți tokens / puncte pentru a recompensa eventualii câștigători / participanți.
+<br>
+✅ Avem nevoie de o modalitate prin care cei ce și-au ales un quest să poată demonstra într-un mod simplu finalizarea acestuia. --> Pentru indeplinirea acestui task, in clasa Quest am adaugat un atribut "link" care initial va fi null si daca un "Employee" va da submit la Quest, acesta va fi obligat sa adauge un link (ex. github). Astfel managerul departamentului (departamentele sunt: Software Development, Technical Support, Quality Assurance, Project Management, Information Security) in care lucreaza acest "Employee" poate sa verifice si sa valideze/anuleze cererea acestuia. Daca este validata cererea, angajatul va primi punctele de pe acel "Quest", in caz contrar acesta va putea da din nou submit cu o noua rezolvare.
+<br>
+✅ CEO-ul dorește să aibă la dispoziție în aplicație un clasament din care poate observa cei mai activi utilizatori p̶e̶n̶t̶r̶u̶ ̶a̶-̶i̶ ̶p̶u̶t̶e̶a̶ ̶r̶e̶c̶o̶m̶p̶e̶n̶s̶a̶ ̶s̶u̶p̶l̶i̶m̶e̶n̶t̶a̶r̶, dar și pentru a trezi spiritul competitiv în comunitate. --> Acest task a fost indeplinit astfel: nu am creat doar un CEO, m-am gandit sa dezvolt putin ideea si sa o duc la un nivel mai amplu. M-am gandit ca fiecare departament va avea unul sau mai multi manageri (admini) care pot avea, pentru departamentul unde acesta este manager, rankingul cu angajatii din departamentul respectiv.
+<br>
+✅ Compania n-are idee despre care sunt tipurile de badges și modurile în care se acordă așa că apelează la creativitatea și ideile voastre. --> Am creat 6 tipuri de badge-uri: < 50 points: Potential, >= 50 points: Explorer, >= 75: points Innovator, >= 125 points: Challenger, >= 175 points: Visionary, >= 250 points: Mastermind.
+<br>
+✅ Compania n-are idee nici cum ar putea fi folosite punctele / tokens în așa fel încât să merite efortul pentru obținerea lor și din nou apelează la creativitatea și ideile voastre. --> M-am gandit ca punctele sa se foloseasca intr-un shop. In acest shop exista 5 tipuri de produse: Merchandise (50 puncte), Mousepad (75 puncte), Mouse (100 puncte), Keyboard (150 puncte), Day off (300 puncte). 
+<br>
 
-<h2>🛠️ Models/Classes </h2>
+<h2>🖥️ Models/Classes </h2>
 <strong>CRUD for medicine:</strong> <i>You can Create/Read/Update/Delete any medicine.</i>
 <br>
-<strong>CRUD for client cards:</strong> <i>You can Create/Read/Update/Delete any client card.</i>
-<br>
-<strong>CRUD for transactions:</strong> <i>You can Create/Read/Update/Delete any transcation.</i>
-<br>
-<strong>Sort medicine:</strong> <i>Implement a function that sorts medicine descending according to the number of sales.</i>
-<br>
-<strong>Increase the price:</strong> <i>The price increase by a given percentage of all medicines with a price lower than a given value.</i>
-<br>
-<strong>Sort client cards:</strong> <i>Sorting customer cards ordered in descending order according to the amount of discounts obtained.</i>
-<br>
-<strong>Verify transactions:</strong> <i>Display of all transactions from a given range of days.</i>
-<br>
-<strong>Delete transactions:</strong> <i>Deleting all transactions from a given range of days.</i>
-<br>
-<strong>Undo/Redo:</strong> <i>Implementation of the Undo/Redo functionality, allowing the user to return to a previous version of the stored data or do the reverse.</i>
-
-✅ <p> Utilizatorii pot câștiga tokens / puncte și badges în urma participării / rezolvării unor quest-uri. . </p>
-✅ <p> Utilizatorii trebuie identificați iar datele aferente lor (punctaje, nume etc.) salvate. </p>
-✅ <p> Quest-urile pot fi propuse de oricine, cu condiția să aibă suficienți tokens / puncte pentru a recompensa eventualii câștigători / participanți. </p>
-✅ <p> Avem nevoie de o modalitate prin care cei ce și-au ales un quest să poată demonstra într-un mod simplu finalizarea acestuia. </p>
-✅ <p> CEO-ul dorește să aibă la dispoziție în aplicație un clasament din care poate observa cei mai activi utilizatori p̶e̶n̶t̶r̶u̶ ̶a̶-̶i̶ ̶p̶u̶t̶e̶a̶ ̶r̶e̶c̶o̶m̶p̶e̶n̶s̶a̶ ̶s̶u̶p̶l̶i̶m̶e̶n̶t̶a̶r̶, dar și pentru a trezi spiritul competitiv în comunitate. </p>
-✅ <p> Compania n-are idee despre care sunt tipurile de badges și modurile în care se acordă așa că apelează la creativitatea și ideile voastre. </p>
-✅ <p> Compania n-are idee nici cum ar putea fi folosite punctele / tokens în așa fel încât să merite efortul pentru obținerea lor și din nou apelează la creativitatea și ideile voastre. </p>
