@@ -73,5 +73,5 @@ The application was designed to encourage Blue company employees to improve thei
 <br>
 
 <h2>🎬 App Demo</h2>
-This demo was created in Romanian.
+This demo was created in Romanian: 
 https://youtu.be/TTJU7LPrVjE
